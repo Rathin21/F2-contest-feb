@@ -1,9 +1,11 @@
 let records = [];
-let ID =1;
+
 
 var table = document.getElementById("myTable");
 
 function addRecord(){
+
+    let ID = records.length+1;
     //getting values from the input
     bookname = document.getElementById("bookName").value;
     issuedto = document.getElementById("issuedTo").value;
@@ -39,7 +41,9 @@ function addRecord(){
     //Button for Changing Status
     var newButton = document.createElement("button");
     newButton.className="btn1";
-    newButton.innerText="click";
+    newButton.innerHTML = `<span class="material-symbols-outlined">
+    edit_square
+    </span>`;
     
     //function for changing status
     newButton.onclick = function () {
@@ -55,8 +59,7 @@ function addRecord(){
     document.getElementById("bookName").value="";
     document.getElementById("issuedTo").value="";
 
-    //incrementing the Id
-    ID++;
+    
 
     
 
